@@ -11,9 +11,53 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+    <!-- Tailwind CSS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/3.3.5/tailwind.min.js"></script>
+
+    <!-- Fallback styles in case Tailwind doesn't load -->
+    <style>
+      /* Basic fallback styles */
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: system-ui, -apple-system, sans-serif;
+      }
+      .no-tailwind {
+        display: none;
+      }
+      .fallback-warning {
+        padding: 1rem;
+        background: #fed7d7;
+        color: #822727;
+        text-align: center;
+        display: none;
+      }
+    </style>
+
+    <!-- Script to check if Tailwind loaded -->
+    <script>
+      window.onload = function () {
+        // Check if Tailwind loaded by looking for a Tailwind class
+        const test = document.createElement("div");
+        test.className = "hidden";
+        document.body.appendChild(test);
+        const computed = window.getComputedStyle(test).display;
+        document.body.removeChild(test);
+
+        if (computed !== "none") {
+          // Tailwind didn't load
+          document.querySelector(".fallback-warning").style.display = "block";
+        }
+      };
+    </script>
   </head>
   <body class="bg-gray-100">
+    <!-- Fallback warning -->
+    <div class="fallback-warning">
+      Note: Some styles may not be loading properly. Please refresh the page or
+      check your connection.
+    </div>
+
     <!-- Navigation -->
     <nav class="bg-white shadow-lg">
       <div class="max-w-6xl mx-auto px-4">
