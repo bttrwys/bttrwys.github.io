@@ -12,9 +12,12 @@
     <link rel="manifest" href="/site.webmanifest" />
 
     <!-- Tailwind CSS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/3.3.5/tailwind.min.js"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+      rel="stylesheet"
+    />
 
-    <!-- Fallback styles in case Tailwind doesn't load -->
+    <!-- Fallback styles -->
     <style>
       /* Basic fallback styles */
       body {
@@ -37,7 +40,7 @@
     <!-- Script to check if Tailwind loaded -->
     <script>
       window.onload = function () {
-        // Check if Tailwind loaded by looking for a Tailwind class
+        // Check if Tailwind loaded
         const test = document.createElement("div");
         test.className = "hidden";
         document.body.appendChild(test);
@@ -45,7 +48,6 @@
         document.body.removeChild(test);
 
         if (computed !== "none") {
-          // Tailwind didn't load
           document.querySelector(".fallback-warning").style.display = "block";
         }
       };
@@ -66,7 +68,7 @@
             <div>
               <a href="#" class="flex items-center py-4">
                 <span class="font-semibold text-gray-800 text-lg"
-                  >Better Ways</span
+                  >Your Name</span
                 >
               </a>
             </div>
@@ -94,11 +96,10 @@
     <div class="bg-white py-20">
       <div class="max-w-6xl mx-auto px-4">
         <div class="text-center">
-          <h1 class="text-4xl font-bold text-gray-800 mb-4">
-            Welcome to My Portfolio
-          </h1>
+          <h1 class="text-4xl font-bold text-gray-800 mb-4">Better Ways</h1>
           <p class="text-lg text-gray-600 mb-8">
-            Full-Stack Developer | Problem Solver | Tech Enthusiast
+            Better ways of thinking, better ways of working, better ways of
+            living. Better, for everyone
           </p>
           <a
             href="#contact"
@@ -125,10 +126,11 @@
             />
             <div class="p-6">
               <h3 class="text-xl font-semibold text-gray-800 mb-2">
-                Project Title 1
+                The Friedman Bubble
               </h3>
               <p class="text-gray-600 mb-4">
-                Description of your amazing project goes here.
+                How the Friedman Doctrine destroyed capitalism and how we can
+                right the ship.
               </p>
               <a href="#" class="text-blue-600 hover:text-blue-800"
                 >Learn More →</a
